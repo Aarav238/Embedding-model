@@ -186,9 +186,9 @@ async function main() {
 
 main().catch(console.error);
 ```
-**Purpose**: This function demonstrates how to use the getLargeFileEmbedding function.
-**File Path**: You provide the path to the large file you want to process.
-**Final Embedding**: The final aggregated embedding is printed after processing the entire file.
+- **Purpose**: This function demonstrates how to use the getLargeFileEmbedding function.
+- **File Path**: You provide the path to the large file you want to process.
+- **Final Embedding**: The final aggregated embedding is printed after processing the entire file.
 
 
 ## Conclusion
