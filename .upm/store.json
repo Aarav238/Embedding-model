@@ -1,0 +1,1 @@
+{"version":2,"languages":{"nodejs-npm":{"specfileHash":"a4b308c8da3631e4732be83b93b08d3d","lockfileHash":"1931fb10bbaaa5b7b78fc9d6557f5e97","guessedImports":["@tensorflow/tfjs-node","openai"],"guessedImportsHash":"d4c214b4657f9653fcdb9175ca849fe0"}}}

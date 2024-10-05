@@ -1,0 +1,484 @@
+openapi: 3.0.1
+info:
+  title: Leasing - ReBQ Retrieve details about any aspect of Payments
+  version: 1.0.0
+servers:
+  - url: http://localhost:3000/apis/B154/BIAN/Leasing
+paths:
+  '/Leasing/{leasingid}/Payments/{paymentsid}/Retrieve':
+      get:
+        tags:
+          - BQ - Payments
+        summary: ReBQ Retrieve details about any aspect of Payments
+        description: ReBQ Retrieve details about any aspect of Payments
+        operationId: Payments/Retrieve
+        parameters:
+          - $ref: '#/components/parameters/leasingid'
+          - $ref: '#/components/parameters/paymentsid'
+        responses:
+          '200':
+            $ref: '#/components/responses/RetrievePaymentsResponse'
+components:
+  schemas:
+    RetrievePaymentsResponse:
+        type: object
+        description: ''
+        properties:
+          PaymentTransaction:
+              $ref: '#/components/schemas/PaymentTransaction'
+          PaymentProcessinngOptionDefinition:
+              $ref: '#/components/schemas/PaymentProcessingArrangementModality'
+          PaymentTransactionFeeType:
+              enum:
+                  -  Accountingfee
+                  -  Adrfee
+                  -  Advisoryfee
+                  -  Airwaybillfee
+                  -  Backendload
+                  -  Brokeragefee
+                  -  Clearanceandhandlingatorigin
+                  -  Collectfreight
+                  -  Commission
+                  -  Correspondentbankcharge
+                  -  Custodyfee
+                  -  Dangerousgoodsfee
+                  -  Dilutionlevy
+                  -  Discount
+                  -  Equalisation
+                  -  Frontendload
+                  -  Initial
+                  -  Insurancepremium
+                  -  Issuancecancellationfee
+                  -  Issuancefee
+                  -  Managementfee
+                  -  Matchingfees
+                  -  Miscellaneousfee
+                  -  Other
+                  -  Packaging
+                  -  Partacquis
+                  -  Penalty
+                  -  Pickup
+                  -  Postagecharge
+                  -  Premium
+                  -  Publicationfee
+                  -  Regulatoryfee
+                  -  Securitycharge
+                  -  Serviceprovisionfee
+                  -  Shippingcharge
+                  -  Signatureservice
+                  -  Specialconcessions
+                  -  Speciallyagreedfrontendload
+                  -  Storageatdestination
+                  -  Storageatorigin
+                  -  Switch
+                  -  Transferfee
+                  -  Transportcharges
+                  -  Ucitscommission
+              type: string
+              description: ">\r\n* `Accountingfee` \r\n* `Adrfee` \r\n* `Advisoryfee` \r\n* `Airwaybillfee` \r\n* `Backendload` \r\n* `Brokeragefee` \r\n* `Clearanceandhandlingatorigin` \r\n* `Collectfreight` \r\n* `Commission` \r\n* `Correspondentbankcharge` \r\n* `Custodyfee` \r\n* `Dangerousgoodsfee` \r\n* `Dilutionlevy` \r\n* `Discount` \r\n* `Equalisation` \r\n* `Frontendload` \r\n* `Initial` \r\n* `Insurancepremium` \r\n* `Issuancecancellationfee` \r\n* `Issuancefee` \r\n* `Managementfee` \r\n* `Matchingfees` \r\n* `Miscellaneousfee` \r\n* `Other` \r\n* `Packaging` \r\n* `Partacquis` \r\n* `Penalty` \r\n* `Pickup` \r\n* `Postagecharge` \r\n* `Premium` \r\n* `Publicationfee` \r\n* `Regulatoryfee` \r\n* `Securitycharge` \r\n* `Serviceprovisionfee` \r\n* `Shippingcharge` \r\n* `Signatureservice` \r\n* `Specialconcessions` \r\n* `Speciallyagreedfrontendload` \r\n* `Storageatdestination` \r\n* `Storageatorigin` \r\n* `Switch` \r\n* `Transferfee` \r\n* `Transportcharges` \r\n* `Ucitscommission` \r\n* "
+    PaymentTransaction:
+        type: object
+        description: ' PaymentExecution|PaymentExecution https://www.iso20022.org/standardsrepository/type/PaymentExecution|Standard|ISO20022 BM '
+        properties:
+          PaymentTransactionType:
+              enum:
+                  -  Cashtransaction
+                  -  Domesticpayment
+                  -  Domestichighvaluepayment
+                  -  Domesticprioritypayment
+                  -  Crossborderpayment
+                  -  Crossborderprioritypayment
+                  -  Crossborderhighvaluepayment
+                  -  Thirdcurrencypayment
+                  -  Thirdcurrencyprioritypayment
+                  -  Tradesettlementpayment
+                  -  Foreignexchange
+                  -  Equivalentamount
+                  -  Loan
+                  -  Loanrepayment
+                  -  Securities
+                  -  Lockbox
+                  -  Dividend
+                  -  Crossedcheque
+                  -  Opencheque
+                  -  Ordercheque
+                  -  Circularcheque
+                  -  Travellerscheques
+                  -  Bankdraft
+                  -  Cashletter
+                  -  Documentarycredit
+                  -  Billofexchange
+                  -  Collection
+                  -  Cashmanagementtransfer
+                  -  Sweepaccount
+                  -  Topaccount
+                  -  Zerobalanceaccount
+                  -  Standingfacilities
+                  -  Swiftpayservicelevelcredit
+                  -  Priorityservicelevelcredit
+                  -  Standardservicelevelcredit
+                  -  Liquiditytransfer
+                  -  Advancepayment
+                  -  Valuedateadjustment
+                  -  Dvpgross
+                  -  Dvpnet
+                  -  Netting
+                  -  Limitpayment
+                  -  Backup
+                  -  Expresspayment
+                  -  Centralbankoperation
+                  -  Clspayment
+                  -  Eurodomesticpayment
+                  -  Agriculturaltransfer
+                  -  Alimonypayment
+                  -  Balanceretail
+                  -  Bonuspayment.
+                  -  Brokeragefee
+                  -  Capitalbuilding
+                  -  Charitypayment
+                  -  Childbenefit
+                  -  Commercialcredit
+                  -  Commission
+                  -  Commoditytransfer
+                  -  Costs
+                  -  Copyright
+                  -  Governmentpayment
+                  -  Insurancepremium
+                  -  Intracompanypayment
+                  -  Interest
+                  -  Licensefee
+                  -  Metals
+                  -  Pensionpayment
+                  -  Purchasesaleofgoods
+                  -  Refund
+                  -  Rent
+                  -  Royalties
+                  -  Purchasesaleofservices
+                  -  Salarypayment
+                  -  Socialsecuritybenefit
+                  -  Standingorder
+                  -  Subscription
+                  -  Treasurystatepayment
+                  -  Valueaddedtaxpayment
+                  -  Withholdingtax
+                  -  Taxpayment
+                  -  Miscellaneous
+                  -  Overnightdeposit
+                  -  Marginallending
+                  -  Other
+                  -  Upfront
+                  -  Unwind
+                  -  Principalexchange
+              type: string
+              description: ">\r\n* `Cashtransaction` \r\n* `Domesticpayment` \r\n* `Domestichighvaluepayment` \r\n* `Domesticprioritypayment` \r\n* `Crossborderpayment` \r\n* `Crossborderprioritypayment` \r\n* `Crossborderhighvaluepayment` \r\n* `Thirdcurrencypayment` \r\n* `Thirdcurrencyprioritypayment` \r\n* `Tradesettlementpayment` \r\n* `Foreignexchange` \r\n* `Equivalentamount` \r\n* `Loan` \r\n* `Loanrepayment` \r\n* `Securities` \r\n* `Lockbox` \r\n* `Dividend` \r\n* `Crossedcheque` \r\n* `Opencheque` \r\n* `Ordercheque` \r\n* `Circularcheque` \r\n* `Travellerscheques` \r\n* `Bankdraft` \r\n* `Cashletter` \r\n* `Documentarycredit` \r\n* `Billofexchange` \r\n* `Collection` \r\n* `Cashmanagementtransfer` \r\n* `Sweepaccount` \r\n* `Topaccount` \r\n* `Zerobalanceaccount` \r\n* `Standingfacilities` \r\n* `Swiftpayservicelevelcredit` \r\n* `Priorityservicelevelcredit` \r\n* `Standardservicelevelcredit` \r\n* `Liquiditytransfer` \r\n* `Advancepayment` \r\n* `Valuedateadjustment` \r\n* `Dvpgross` \r\n* `Dvpnet` \r\n* `Netting` \r\n* `Limitpayment` \r\n* `Backup` \r\n* `Expresspayment` \r\n* `Centralbankoperation` \r\n* `Clspayment` \r\n* `Eurodomesticpayment` \r\n* `Agriculturaltransfer` \r\n* `Alimonypayment` \r\n* `Balanceretail` \r\n* `Bonuspayment` \r\n* `Brokeragefee` \r\n* `Capitalbuilding` \r\n* `Charitypayment` \r\n* `Childbenefit` \r\n* `Commercialcredit` \r\n* `Commission` \r\n* `Commoditytransfer` \r\n* `Costs` \r\n* `Copyright` \r\n* `Governmentpayment` \r\n* `Insurancepremium` \r\n* `Intracompanypayment` \r\n* `Interest` \r\n* `Licensefee` \r\n* `Metals` \r\n* `Pensionpayment` \r\n* `Purchasesaleofgoods` \r\n* `Refund` \r\n* `Rent` \r\n* `Royalties` \r\n* `Purchasesaleofservices` \r\n* `Salarypayment` \r\n* `Socialsecuritybenefit` \r\n* `Standingorder` \r\n* `Subscription` \r\n* `Treasurystatepayment` \r\n* `Valueaddedtaxpayment` \r\n* `Withholdingtax` \r\n* `Taxpayment` \r\n* `Miscellaneous` \r\n* `Overnightdeposit` \r\n* `Marginallending` \r\n* `Other` \r\n* `Upfront` \r\n* `Unwind` \r\n* `Principalexchange` \r\n* "
+          PaymentTransactionAmount:
+              type: string
+              description: ''
+              format: Amount
+          PaymentTransactionIdentification:
+              type: string
+              description: ''
+              format: Identifier
+          PaymentTransactionUsedMechanism:
+              type: string
+              description: ''
+              format: Text
+          PaymentTransactionDatetime:
+              type: string
+              description: ''
+              format: Datetime
+          PaymentTransactionPurpose:
+              enum:
+                  -  Salarypayment
+                  -  Treasurypayment
+                  -  Advancepayment
+                  -  Agriculturaltransfer
+                  -  Alimonypayment
+                  -  Childbenefit
+                  -  Bonuspayment.
+                  -  Cashmanagementtransfer
+                  -  Capitalbuilding
+                  -  Charitypayment
+                  -  Collectionpayment
+                  -  Commoditytransfer
+                  -  Commercialpayment
+                  -  Commission
+                  -  Costs
+                  -  Copyright
+                  -  Dividend
+                  -  Foreignexchange
+                  -  Purchasesaleofgoods
+                  -  Governmentpayment
+                  -  Intracompanypayment
+                  -  Insurancepremium
+                  -  Interest
+                  -  Licensefee
+                  -  Loan
+                  -  Loanrepayment
+                  -  Netting
+                  -  Payroll
+                  -  Pensionpayment
+                  -  Refund
+                  -  Rent
+                  -  Royalties
+                  -  Purchasesaleofservices
+                  -  Securities
+                  -  Socialsecuritybenefit
+                  -  Subscription
+                  -  Taxpayment
+                  -  Valueaddedtaxpayment
+                  -  Debitcollectionpayment
+                  -  Supplierpayment
+                  -  Hedging
+                  -  Multipleservicetypes
+                  -  Nototherwisespecified
+                  -  Cardpayment
+                  -  Creditcardbill
+                  -  Ferry
+                  -  Air
+                  -  Bus
+                  -  Railway
+                  -  Convalescentcarefacility
+                  -  Dentalservices
+                  -  Anesthesiaservices
+                  -  Homehealthcare
+                  -  Hospitalcare
+                  -  Intermediatecarefacility
+                  -  Longtermcarefacility
+                  -  Medicalservices
+                  -  Visioncare
+                  -  Durablemedicaleequipment
+                  -  Cabletvbill
+                  -  Electricitybill
+                  -  Gasbill
+                  -  Telephonebill
+                  -  Othertelecomrelatedbill
+                  -  Waterbill
+                  -  Study
+                  -  Pricepayment
+                  -  Installment
+                  -  Recurringinstallmentpayment
+                  -  Openingfee
+                  -  Cancellationfee
+                  -  Governmentinsurance
+                  -  Insurancepremiumcar
+                  -  Laborinsurance
+                  -  Lifeinsurance
+                  -  Propertyinsurance
+                  -  Healthinsurance
+                  -  Carloanprincipalrepayment
+                  -  Housingloanrepayment
+                  -  Estatetax
+                  -  Housingtax
+                  -  Incometax
+                  -  Netincometax
+                  -  Businessexpenses
+                  -  Trustfund
+                  -  Networkcharge
+                  -  Networkcommunication
+                  -  Receiptpayment
+                  -  Paymentterms
+                  -  Other
+                  -  Withholding
+              type: string
+              description: ">\r\n* `Salarypayment` \r\n* `Treasurypayment` \r\n* `Advancepayment` \r\n* `Agriculturaltransfer` \r\n* `Alimonypayment` \r\n* `Childbenefit` \r\n* `Bonuspayment` \r\n* `Cashmanagementtransfer` \r\n* `Capitalbuilding` \r\n* `Charitypayment` \r\n* `Collectionpayment` \r\n* `Commoditytransfer` \r\n* `Commercialpayment` \r\n* `Commission` \r\n* `Costs` \r\n* `Copyright` \r\n* `Dividend` \r\n* `Foreignexchange` \r\n* `Purchasesaleofgoods` \r\n* `Governmentpayment` \r\n* `Intracompanypayment` \r\n* `Insurancepremium` \r\n* `Interest` \r\n* `Licensefee` \r\n* `Loan` \r\n* `Loanrepayment` \r\n* `Netting` \r\n* `Payroll` \r\n* `Pensionpayment` \r\n* `Refund` \r\n* `Rent` \r\n* `Royalties` \r\n* `Purchasesaleofservices` \r\n* `Securities` \r\n* `Socialsecuritybenefit` \r\n* `Subscription` \r\n* `Taxpayment` \r\n* `Valueaddedtaxpayment` \r\n* `Debitcollectionpayment` \r\n* `Supplierpayment` \r\n* `Hedging` \r\n* `Multipleservicetypes` \r\n* `Nototherwisespecified` \r\n* `Cardpayment` \r\n* `Creditcardbill` \r\n* `Ferry` \r\n* `Air` \r\n* `Bus` \r\n* `Railway` \r\n* `Convalescentcarefacility` \r\n* `Dentalservices` \r\n* `Anesthesiaservices` \r\n* `Homehealthcare` \r\n* `Hospitalcare` \r\n* `Intermediatecarefacility` \r\n* `Longtermcarefacility` \r\n* `Medicalservices` \r\n* `Visioncare` \r\n* `Durablemedicaleequipment` \r\n* `Cabletvbill` \r\n* `Electricitybill` \r\n* `Gasbill` \r\n* `Telephonebill` \r\n* `Othertelecomrelatedbill` \r\n* `Waterbill` \r\n* `Study` \r\n* `Pricepayment` \r\n* `Installment` \r\n* `Recurringinstallmentpayment` \r\n* `Openingfee` \r\n* `Cancellationfee` \r\n* `Governmentinsurance` \r\n* `Insurancepremiumcar` \r\n* `Laborinsurance` \r\n* `Lifeinsurance` \r\n* `Propertyinsurance` \r\n* `Healthinsurance` \r\n* `Carloanprincipalrepayment` \r\n* `Housingloanrepayment` \r\n* `Estatetax` \r\n* `Housingtax` \r\n* `Incometax` \r\n* `Netincometax` \r\n* `Businessexpenses` \r\n* `Trustfund` \r\n* `Networkcharge` \r\n* `Networkcommunication` \r\n* `Receiptpayment` \r\n* `Paymentterms` \r\n* `Other` \r\n* `Withholding` \r\n* "
+          PaymentTransactionStatus:
+              type: string
+              description: ''
+              format: Paymenttransactionstatus
+          PaymentTransactionAppliedFeeAmount:
+              type: string
+              description: ''
+              format: Amount
+          PaymentTransactionCurrency:
+              type: string
+              description: ''
+              format: Paymenttransactioncurrency
+          PaymentCreditDebitIndicator:
+              enum:
+                  -  Debit
+                  -  Credit
+              type: string
+              description: ">\r\n* `Debit` \r\n* `Credit` \r\n* "
+          PaymentTransactionAmountType:
+              enum:
+                  -  Principal
+                  -  Actual
+                  -  Estimated
+                  -  Maximum
+                  -  Default
+                  -  Replacement
+                  -  Incremental
+                  -  Decremental
+                  -  Reserved
+                  -  Available
+                  -  Used
+              type: string
+              description: ">\r\n* `Principal` \r\n* `Actual` \r\n* `Estimated` \r\n* `Maximum` \r\n* `Default` \r\n* `Replacement` \r\n* `Incremental` \r\n* `Decremental` \r\n* `Reserved` \r\n* `Available` \r\n* `Used` \r\n* "
+          PaymentTransactionDatetimeType:
+              enum:
+                  -  Requestedexecutiondate
+                  -  Acceptancedatetime
+                  -  Creationdate
+                  -  Valuedate
+                  -  Duedate
+                  -  Expirydate
+              type: string
+              description: ">\r\n* `Requestedexecutiondate` \r\n* `Acceptancedatetime` \r\n* `Creationdate` \r\n* `Valuedate` \r\n* `Duedate` \r\n* `Expirydate` \r\n* "
+    PaymentProcessingArrangementModality:
+        type: object
+        description: ' PaymentProcessing|PaymentProcessing https://www.iso20022.org/standardsrepository/type/PaymentProcessing|Standard|ISO20022 BM '
+        properties:
+          PaymentProcessingPriority:
+              enum:
+                  -  Urgent
+                  -  High
+                  -  Normal
+                  -  Low
+              type: string
+              description: ">\r\n* `Urgent` \r\n* `High` \r\n* `Normal` \r\n* `Low` \r\n* "
+          PaymentProcessingArrangement:
+              type: string
+              description: ''
+              format: Arrangement
+          PaymentProcessingClearingChannel:
+              enum:
+                  -  Realtimenetsettlementsystem
+                  -  Masspaymentnetsystem
+                  -  Booktransfer
+              type: string
+              description: ">\r\n* `Realtimenetsettlementsystem` \r\n* `Masspaymentnetsystem` \r\n* `Booktransfer` \r\n* "
+          PaymentLocalInstument:
+              enum:
+                  -  Batchpaymentsaruba
+                  -  Instantpaymentsaruba
+                  -  Credittransfers
+                  -  Preauthoriseddirectdebitat
+                  -  Cashperpost
+                  -  Returnedcredittransfers
+                  -  Truncatedcredittransfers
+                  -  Directdebits
+                  -  Returneddirectdebits
+                  -  Truncatedchecks
+                  -  Revokedcredittransfers
+                  -  Revokeddirectdebits
+                  -  Revokedreturneddirectdebits
+                  -  Revokedtruncatedchecks
+                  -  Cardclearing
+                  -  Preauthoriseddirectdebitde
+                  -  Imagebasedchequecollection
+                  -  Paperlesschequecollection
+                  -  Backuppayment
+                  -  Mandatedpayment
+                  -  Dutchdomesticbulkpayment
+                  -  Dutchurgentpayment
+                  -  Incidentmanagementcorrection
+                  -  Masspaymentbeneficiary
+                  -  Masspaymentours
+                  -  Masspaymentshared
+                  -  Standingorder
+                  -  Oneoffauthorisation
+                  -  Oneoffauthorisationcharities
+                  -  Standingauthorisationgeneral
+                  -  Convertedbankpayment
+                  -  Businesspayment
+                  -  Overnight
+                  -  Paymentwitheri
+                  -  Sameday
+                  -  Corenorefund
+                  -  Directdebitfixedamount
+                  -  Sepadirectdebitcore
+                  -  Sepab2bdirectdebitami
+                  -  Sepacored1directdebitami
+                  -  Sepacoredirectdebitami
+                  -  Sepafadirectdebitami
+                  -  Instantcredittransfer
+                  -  Authenticateddirectdebit
+                  -  Unauthenticateddirectdebit
+                  -  Cashconcentrationintragroup
+                  -  Banktransfer
+                  -  Checksamedaysettlementwire
+                  -  Customertransfer
+                  -  Customertransferplus
+                  -  Deposittosendersaccount
+                  -  Fedfundsreturned
+                  -  Fedfundssold
+                  -  Nonvalueservicemessage
+                  -  Internationalach
+                  -  Corporatetradeexchange
+                  -  Customerinitiatedentry
+                  -  Representedcheckentry
+                  -  Accountsreceivablecheck
+                  -  Internetinitiatedentry
+                  -  Pointofpurchase
+                  -  Pointofsale
+                  -  Telephoneinitiatedentry
+              type: string
+              description: ">\r\n* `Batchpaymentsaruba` \r\n* `Instantpaymentsaruba` \r\n* `Credittransfers` \r\n* `Preauthoriseddirectdebitat` \r\n* `Cashperpost` \r\n* `Returnedcredittransfers` \r\n* `Truncatedcredittransfers` \r\n* `Directdebits` \r\n* `Returneddirectdebits` \r\n* `Truncatedchecks` \r\n* `Revokedcredittransfers` \r\n* `Revokeddirectdebits` \r\n* `Revokedreturneddirectdebits` \r\n* `Revokedtruncatedchecks` \r\n* `Cardclearing` \r\n* `Preauthoriseddirectdebitde` \r\n* `Imagebasedchequecollection` \r\n* `Paperlesschequecollection` \r\n* `Backuppayment` \r\n* `Mandatedpayment` \r\n* `Dutchdomesticbulkpayment` \r\n* `Dutchurgentpayment` \r\n* `Incidentmanagementcorrection` \r\n* `Masspaymentbeneficiary` \r\n* `Masspaymentours` \r\n* `Masspaymentshared` \r\n* `Standingorder` \r\n* `Oneoffauthorisation` \r\n* `Oneoffauthorisationcharities` \r\n* `Standingauthorisationgeneral` \r\n* `Convertedbankpayment` \r\n* `Businesspayment` \r\n* `Overnight` \r\n* `Paymentwitheri` \r\n* `Sameday` \r\n* `Corenorefund` \r\n* `Directdebitfixedamount` \r\n* `Sepadirectdebitcore` \r\n* `Sepabbdirectdebitami` \r\n* `Sepacoreddirectdebitami` \r\n* `Sepacoredirectdebitami` \r\n* `Sepafadirectdebitami` \r\n* `Instantcredittransfer` \r\n* `Authenticateddirectdebit` \r\n* `Unauthenticateddirectdebit` \r\n* `Cashconcentrationintragroup` \r\n* `Banktransfer` \r\n* `Checksamedaysettlementwire` \r\n* `Customertransfer` \r\n* `Customertransferplus` \r\n* `Deposittosendersaccount` \r\n* `Fedfundsreturned` \r\n* `Fedfundssold` \r\n* `Nonvalueservicemessage` \r\n* `Internationalach` \r\n* `Corporatetradeexchange` \r\n* `Customerinitiatedentry` \r\n* `Representedcheckentry` \r\n* `Accountsreceivablecheck` \r\n* `Internetinitiatedentry` \r\n* `Pointofpurchase` \r\n* `Pointofsale` \r\n* `Telephoneinitiatedentry` \r\n* "
+          PaymentCategoryPurpose:
+              enum:
+                  -  Bonuspayment
+                  -  Cashmanagementtransfer
+                  -  Cardbulkclearing
+                  -  Creditcardpayment
+                  -  Tradesettlementpayment
+                  -  Debitcardpayment
+                  -  Dividend
+                  -  Deliveragainstpayment
+                  -  Epayment
+                  -  Feecollection
+                  -  Governmentpayment
+                  -  Hedging
+                  -  Irrevocablecreditcardpayment
+                  -  Irrevocabledebitcardpayment
+                  -  Intracompanypayment
+                  -  Interest
+                  -  Loan
+                  -  Commercial
+                  -  Consumer
+                  -  Otherpayment
+                  -  Pensionpayment
+                  -  Represented
+                  -  Receiveagainstpayment
+                  -  Salarypayment
+                  -  Securities
+                  -  Socialsecuritybenefit
+                  -  Supplierpayment
+                  -  Taxpayment
+                  -  Trade
+                  -  Treasurypayment
+                  -  Valueaddedtaxpayment
+                  -  Withholding
+              type: string
+              description: ">\r\n* `Bonuspayment` \r\n* `Cashmanagementtransfer` \r\n* `Cardbulkclearing` \r\n* `Creditcardpayment` \r\n* `Tradesettlementpayment` \r\n* `Debitcardpayment` \r\n* `Dividend` \r\n* `Deliveragainstpayment` \r\n* `Epayment` \r\n* `Feecollection` \r\n* `Governmentpayment` \r\n* `Hedging` \r\n* `Irrevocablecreditcardpayment` \r\n* `Irrevocabledebitcardpayment` \r\n* `Intracompanypayment` \r\n* `Interest` \r\n* `Loan` \r\n* `Commercial` \r\n* `Consumer` \r\n* `Otherpayment` \r\n* `Pensionpayment` \r\n* `Represented` \r\n* `Receiveagainstpayment` \r\n* `Salarypayment` \r\n* `Securities` \r\n* `Socialsecuritybenefit` \r\n* `Supplierpayment` \r\n* `Taxpayment` \r\n* `Trade` \r\n* `Treasurypayment` \r\n* `Valueaddedtaxpayment` \r\n* `Withholding` \r\n* "
+          PaymentSequence:
+              enum:
+                  -  First
+                  -  Recurring
+                  -  Final
+                  -  Oneoff
+                  -  Represented
+              type: string
+              description: ">\r\n* `First` \r\n* `Recurring` \r\n* `Final` \r\n* `Oneoff` \r\n* `Represented` \r\n* "
+  parameters:
+    paymentsid:
+        name: paymentsid
+        in: path
+        required: true
+        style: simple
+        schema:
+          type: string
+    leasingid:
+        name: leasingid
+        in: path
+        required: true
+        style: simple
+        schema:
+          type: string
+  responses:
+    RetrievePaymentsResponse:
+        description: PaymentsRetrieve
+        content:
+          'application/json:':
+            schema:
+              $ref: '#/components/schemas/RetrievePaymentsResponse'

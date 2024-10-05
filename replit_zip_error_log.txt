@@ -1,0 +1,16 @@
+{"error":".zip archives do not support non-regular files","level":"error","msg":"unable to write file .cache/replit/modules/nodejs-20","time":"2024-10-05T21:44:54Z"}
+{"error":".zip archives do not support non-regular files","level":"error","msg":"unable to write file .cache/replit/modules/replit","time":"2024-10-05T21:44:54Z"}
+{"error":".zip archives do not support non-regular files","level":"error","msg":"unable to write file node_modules/.bin/color-support","time":"2024-10-05T21:44:55Z"}
+{"error":".zip archives do not support non-regular files","level":"error","msg":"unable to write file node_modules/.bin/mkdirp","time":"2024-10-05T21:44:55Z"}
+{"error":".zip archives do not support non-regular files","level":"error","msg":"unable to write file node_modules/.bin/node-pre-gyp","time":"2024-10-05T21:44:55Z"}
+{"error":".zip archives do not support non-regular files","level":"error","msg":"unable to write file node_modules/.bin/nopt","time":"2024-10-05T21:44:55Z"}
+{"error":".zip archives do not support non-regular files","level":"error","msg":"unable to write file node_modules/.bin/openai","time":"2024-10-05T21:44:55Z"}
+{"error":".zip archives do not support non-regular files","level":"error","msg":"unable to write file node_modules/.bin/rimraf","time":"2024-10-05T21:44:55Z"}
+{"error":".zip archives do not support non-regular files","level":"error","msg":"unable to write file node_modules/.bin/semver","time":"2024-10-05T21:44:55Z"}
+{"error":".zip archives do not support non-regular files","level":"error","msg":"unable to write file node_modules/.bin/tfjs-custom-module","time":"2024-10-05T21:44:55Z"}
+{"error":".zip archives do not support non-regular files","level":"error","msg":"unable to write file node_modules/@mapbox/node-pre-gyp/node_modules/.bin/rimraf","time":"2024-10-05T21:44:55Z"}
+{"error":".zip archives do not support non-regular files","level":"error","msg":"unable to write file node_modules/@tensorflow/tfjs-node/deps/lib/libtensorflow.so","time":"2024-10-05T21:45:09Z"}
+{"error":".zip archives do not support non-regular files","level":"error","msg":"unable to write file node_modules/@tensorflow/tfjs-node/deps/lib/libtensorflow.so.2","time":"2024-10-05T21:45:09Z"}
+{"error":".zip archives do not support non-regular files","level":"error","msg":"unable to write file node_modules/@tensorflow/tfjs-node/deps/lib/libtensorflow_framework.so","time":"2024-10-05T21:45:23Z"}
+{"error":".zip archives do not support non-regular files","level":"error","msg":"unable to write file node_modules/@tensorflow/tfjs-node/deps/lib/libtensorflow_framework.so.2","time":"2024-10-05T21:45:23Z"}
+{"error":".zip archives do not support non-regular files","level":"error","msg":"unable to write file node_modules/make-dir/node_modules/.bin/semver","time":"2024-10-05T21:45:27Z"}
